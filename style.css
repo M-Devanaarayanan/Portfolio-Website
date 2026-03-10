@@ -1,0 +1,201 @@
+@font-face {
+    font-family: alice;
+    src: url(./astroz/Astroz\ Trial.ttf);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #0a192f; /* Deep Navy */
+    color: whitesmoke;           /* Soft Slate (for text) */
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    padding: 25px;
+}
+.container{
+    display: flex;
+    width: 100%;
+}
+.lefthero{
+    width: 40%;
+    position: sticky;
+    height: 100vh;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.lefthero  h1{
+    padding: 10px;
+    font-size: 2.5rem;
+    
+}
+.lefthero  h3{
+    padding: 10px;
+    font-size: 1 rem;
+}
+.righthero {
+    width: 60%;
+    padding-top: 80px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 120px; /* Large gaps make the sections feel distinct */
+}
+.righthero h2{
+    margin-bottom: 15px;
+}
+.highlight {
+    color: #64ffda; /* That emerald/cyan color */
+    font-weight: 500;
+}
+/* Photo Layout & Container */
+/* 1. The Container: Just for spacing and centering */
+.about-image {
+    display: flex;
+    justify-content: center; 
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* 2. The Wrapper: This MUST be the exact size of the photo */
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    line-height: 0; 
+    border-radius: 15px;
+    border: 2px solid #64ffda;
+    /* This adds a soft emerald glow */
+    box-shadow: 0 10px 30px -15px rgba(100, 255, 218, 0.3); 
+    transition: all 0.3s ease;
+}
+
+.image-wrapper:hover {
+    /* On hover, the glow gets stronger and the photo lifts */
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -10px rgba(100, 255, 218, 0.5);
+}
+
+/* 3. The Image: The top layer */
+.image-wrapper img {
+    height: 250px;
+    width: auto;
+    border-radius: 10px;
+    position: relative;     /* Allows us to use z-index */
+    z-index: 2;             /* Sits ABOVE the border */
+    display: block;
+}
+
+/* 4. The Border: The bottom layer */
+.education-card {
+    margin-bottom: 40px;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between; /* Puts Title on left, Date on right */
+    align-items: baseline;
+}
+
+.edu-header h3 {
+    color: #ccd6f6;
+    font-size: 1.3rem;
+}
+
+.edu-date {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: #8892b0;
+}
+
+.edu-school {
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.edu-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.edu-list li::before {
+    content: "▹";
+    color: #64ffda;
+    margin-right: 10px;
+}
+
+.project-card {
+    margin-top: 40px;
+}
+
+.project-overline {
+    color: #64ffda;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.project-title {
+    color: #ccd6f6;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.project-description {
+    background-color: #112240; /* Lighter navy for depth */
+    padding: 25px;
+    border-radius: 4px;
+    color: #a8b2d1;
+    line-height: 2;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    margin-bottom: 20px;
+}
+
+.project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 15px;
+    font-family: alice;
+    font-size: 0.8rem;
+    color: #8892b0;
+}
+
+.skills-wrapper p {
+    margin-bottom: 20px;
+    color: #8892b0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 200px)); /* Two columns */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.skills-grid li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-family: alice; /* The "Coder" font */
+    font-size: 0.9rem;
+    color: #8892b0;
+}
+
+/* The Emerald Arrow Symbol */
+.skills-grid li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #64ffda; /* Your accent color */
+    line-height: 12px;
+}
