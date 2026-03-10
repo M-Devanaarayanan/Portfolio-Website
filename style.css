@@ -18,21 +18,14 @@ body {
     color: whitesmoke;           /* Soft Slate (for text) */
     font-family: 'Inter', sans-serif;
     line-height: 1.5;
-    padding: 25px;
+    padding: 0px;
 }
 .container{
     display: flex;
     width: 100%;
+    align-items: flex-start;
 }
-.lefthero{
-    width: 40%;
-    position: sticky;
-    height: 100vh;
-    top: 0px;
-    display: flex;
-    flex-direction: column;
-    
-}
+
 .lefthero  h1{
     padding: 10px;
     font-size: 2.5rem;
@@ -169,14 +162,20 @@ body {
     color: #8892b0;
 }
 
+#skills {
+    max-width: 600px; /* Keeps the list from stretching too wide */
+}
+
 .skills-wrapper p {
     margin-bottom: 20px;
     color: #8892b0;
+    font-size: 1.1rem;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px)); /* Two columns */
+    /* This creates two columns of equal width */
+    grid-template-columns: repeat(2, minmax(140px, 200px));
     padding: 0;
     margin: 0;
     list-style: none;
@@ -186,9 +185,14 @@ body {
     position: relative;
     padding-left: 20px;
     margin-bottom: 10px;
-    font-family: alice; /* The "Coder" font */
+    font-family: 'Fira Code', monospace; /* The "Coder" font look */
     font-size: 0.9rem;
     color: #8892b0;
+    transition: color 0.2s ease;
+}
+
+.skills-grid li:hover {
+    color: #64ffda; /* Lights up when you hover */
 }
 
 /* The Emerald Arrow Symbol */
@@ -196,6 +200,66 @@ body {
     content: "▹";
     position: absolute;
     left: 0;
-    color: #64ffda; /* Your accent color */
+    color: #64ffda; /* Your accent emerald color */
     line-height: 12px;
+}
+.lefthero {
+    width: 40%;
+    position: sticky;
+    height: 100vh;
+    top: 0;
+    padding: 80px 40px; /* More breathing room */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This pushes the icons to the very bottom */
+    overflow: hidden;
+}
+
+/* Quote Styling */
+.quote-container {
+    margin: 40px 0;
+    padding-left: 20px;
+    border-left: 2px solid #64ffda; /* That emerald vertical line */
+}
+
+.quote {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #8892b0;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+/* Social Icons Styling */
+.social-links {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.social-links a {
+    color: #8892b0;
+    transition: all 0.3s ease;
+}
+
+.social-links a svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-links a:hover {
+    color: #64ffda; /* Turns emerald on hover */
+    transform: translateY(-3px);
+}
+
+.lefthero > header > p{
+    padding: 10px;
+}
+
+header{
+    margin-top: 25px;
+}
+
+.social-links{
+    margin-left: 40px;
 }
